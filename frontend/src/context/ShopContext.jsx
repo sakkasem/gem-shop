@@ -6,7 +6,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
     const currency = '฿'; // สกุลเงิน
     const delivery_fee = 50; // ค่าจัดส่ง
-    const backendUrl = "http://localhost:4000"; // URL หลังบ้านของคุณ
+    const backendUrl = import.meta.env.VITE_BACKEND_URL; // URL หลังบ้านของคุณ
     
     const [products, setProducts] = useState([]);
     const [cartItems, setCartItems] = useState({});
