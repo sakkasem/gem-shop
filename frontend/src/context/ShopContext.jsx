@@ -8,6 +8,7 @@ const ShopContextProvider = (props) => {
     const delivery_fee = 50; // ค่าจัดส่ง
     const backendUrl = import.meta.env.VITE_BACKEND_URL; // URL หลังบ้านของคุณ
     
+    
     const [products, setProducts] = useState([]);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState(''); // เก็บ Token สำหรับตรวจสอบการ Login
@@ -15,7 +16,7 @@ const ShopContextProvider = (props) => {
     // ดึงข้อมูลสินค้าจาก Backend จริงๆ
     const getProductsData = async () => {
         try {
-            const response = await axios.get(`${backendUrl}/api/products`);
+            const response = await axios.get(`${backendUrl}/api/product`);
             if (response.data) {
                 setProducts(response.data);
             }
