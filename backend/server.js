@@ -43,7 +43,12 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174', 'https://gem-shop-nu.vercel.app'],
+    origin: [
+        'http://localhost:5173', 
+        'http://localhost:5174', 
+        'https://gem-shop-nu.vercel.app',  // URL หน้า Frontend หลัก
+        'https://gem-shop-ty1y.vercel.app' // 🔥 เพิ่ม URL ของหน้า Admin ตรงนี้! (ตามรูป image_69f942)
+    ],
     credentials: true
 }));
 // server.js
