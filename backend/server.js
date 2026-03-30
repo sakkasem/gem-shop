@@ -1,4 +1,4 @@
-import express from "express";
+
 import cors from "cors";
 import 'dotenv/config';
 import cookieParser from "cookie-parser";
@@ -16,7 +16,7 @@ import authUser from './middleware/auth.js'; // 🔥 เพิ่มบรรท
 import orderRouter from './Routes/orderRoute.js'; // มั่นใจว่า path ตรงกับโฟลเดอร์ในรูปนะ
 import productRouter from './Routes/productRoute.js'
 import couponRouter from './Routes/couponRoute.js'
-import userroute from "./routes/userroute.js";
+import userroute from "./Routes/userroute.js";
 
 dns.setServers(['8.8.8.8','1.1.1.1'])
 
