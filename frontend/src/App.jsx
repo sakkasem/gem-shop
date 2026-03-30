@@ -92,7 +92,7 @@ function App() {
             {/* Product Grid */}
             <main className="max-w-7xl mx-auto p-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                {products.map((p) => (
+                {products?.map((p) => (
                   <div key={p._id} className="group bg-[#161616] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#D4AF37]/50 transition-all duration-500 shadow-xl">
                     <div className="relative overflow-hidden">
                       <img 
