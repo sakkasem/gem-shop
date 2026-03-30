@@ -1,4 +1,4 @@
-
+import express from "express";
 import cors from "cors";
 import 'dotenv/config';
 import cookieParser from "cookie-parser";
@@ -9,6 +9,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dns from "dns/promises"
 import nodemailer from 'nodemailer';
+
 import User from './models/userModel.js';
 import Product from "./models/Product.js";
 import orderModel from './models/orderModel.js';
