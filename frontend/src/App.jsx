@@ -16,7 +16,7 @@ function App() {
   const [token, setToken] = useState('');
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/products")
+    axios.get(import.meta.env.VITE_BACKEND_URL + '/api/product/list')
       .then(res => setProducts(res.data))
       .catch(err => console.log(err));
   }, []);
