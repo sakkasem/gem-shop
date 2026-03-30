@@ -18,7 +18,7 @@ const ShopContextProvider = (props) => {
         try {
             const response = await axios.get(`${backendUrl}/api/product/list`);
             if (response.data.success) {
-                setProducts(response.data.products);
+                setProduct(response.data.product);
             } else {
             console.error("API Error:", response.data.message);
             }
