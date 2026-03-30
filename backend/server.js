@@ -16,7 +16,7 @@ import authUser from './middleware/auth.js'; // 🔥 เพิ่มบรรท
 import orderRouter from './Routes/orderRoute.js'; // มั่นใจว่า path ตรงกับโฟลเดอร์ในรูปนะ
 import productRouter from './Routes/productRoute.js'
 import couponRouter from './Routes/couponRoute.js'
-import userRouter from "./routes/userRouter.js";
+import userroute from "./routes/userroute.js";
 
 dns.setServers(['8.8.8.8','1.1.1.1'])
 
@@ -56,7 +56,7 @@ app.use('/uploads', express.static('uploads', {
 app.use('/api/order', orderRouter);
 app.use('/api/product', productRouter);
 app.use('/api/coupon', couponRouter)
-app.use("/api/user", userRouter);
+app.use("/api/user", userRoute);
 
 
 // Route ทดสอบ
