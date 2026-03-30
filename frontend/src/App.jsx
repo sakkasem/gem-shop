@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   
   const { products, addToCart, getCartCount } = useContext(ShopContext);
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('token') || '');
   
 
   useEffect(() => {
