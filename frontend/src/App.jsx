@@ -16,12 +16,9 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   
 
-  useEffect(() => {
-    const savedToken = localStorage.getItem('token');
-    if (savedToken) {
-      setToken(savedToken);
-    }
-  }, []);
+useEffect(() => {
+  localStorage.setItem('token', token);
+}, [token]);
 
   const logout = () => {
     localStorage.removeItem('token');
