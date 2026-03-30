@@ -11,7 +11,7 @@ const createToken = (id) => {
 // --- ฟังก์ชันดึงข้อมูลโปรไฟล์ ---
 const getProfile = async (req, res) => {
     try {
-        const { userId } = req.userId; // ได้จาก middleware authUser
+        const userId = req.userId; // ได้จาก middleware authUser
         const user = await userModel.findById(userId).select("-password");
         
         if (!user) {
@@ -122,6 +122,13 @@ const changePassword = async (req, res) => {
     try {
         const userId = req.userId; 
         const { oldPassword, newPassword } = req.body;
+
+        // 1. ต้องดึงข้อมูล user ออกมาก่อน ไม่งั้นจะใช้ user.password ไม่ได้ (จุดที่พลาด)
+        const user = await userModel.findById(userId);
+        
+        if (!user) {
+            return res.json({ success: false, message: "ไม่พบผู้ใช้งาน" });
+        }
 
         // เช็ครหัสผ่านเก่า
         const isMatch = await bcrypt.compare(oldPassword, user.password);
