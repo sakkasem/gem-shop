@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { ShopContext } from '../context/ShopContext';
 
 const Login = () => {
   const [currentState, setCurrentState] = useState('Login');
@@ -16,7 +17,7 @@ const Login = () => {
   const [newPassword, setNewPassword] = useState('');
 
   const navigate = useNavigate();
-  const backendUrl = "http://localhost:4000";
+  const { backendUrl } = useContext(ShopContext);
 
   const onForgotHandler = async (e) => {
     e.preventDefault();
