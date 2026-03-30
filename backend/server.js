@@ -56,7 +56,7 @@ app.use('/uploads', express.static('uploads', {
 app.use('/api/order', orderRouter);
 app.use('/api/product', productRouter);
 app.use('/api/coupon', couponRouter)
-app.use("/api/user", userRoute);
+app.use("/api/user", userroute);
 
 
 // Route ทดสอบ
